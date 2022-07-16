@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 const config = (env, argv) => {
   return {
@@ -51,6 +52,10 @@ const config = (env, argv) => {
             to: "./manifest.json",
           },
         ],
+      }),
+      new ESLintPlugin({
+        exclude: ["./node_modules/*"],
+        extensions: ["ts", "tsx"],
       }),
     ],
     optimization:
