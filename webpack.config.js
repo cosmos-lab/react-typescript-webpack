@@ -26,10 +26,6 @@ const config = (env, argv) => {
         ["@views"]: path.resolve(__dirname, "src/views/"),
       },
     },
-    output: {
-      path: path.resolve(__dirname, "build"),
-      filename: "bundle.js",
-    },
     devServer: {
       static: path.join(__dirname, "build"),
       port: 4000,
