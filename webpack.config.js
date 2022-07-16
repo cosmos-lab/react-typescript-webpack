@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const config = (env, argv) => {
   return {
@@ -52,6 +53,17 @@ const config = (env, argv) => {
         ],
       }),
     ],
+    optimization:
+      argv.mode === "production"
+        ? {
+            minimize: true,
+            minimizer: [
+              new TerserPlugin({
+                extractComments: false,
+              }),
+            ],
+          }
+        : { minimize: false },
   };
 };
 
