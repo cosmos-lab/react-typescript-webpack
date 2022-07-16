@@ -12,8 +12,8 @@
     "pretty": "prettier --write ./src/",
     "clean": "rimraf ./build",
     "test": "jest --env=jsdom ./tests/unit",
-    "husky-install": "husky install",
-    "lint-staged": "lint-staged "
+    "lint-staged": "lint-staged ",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
