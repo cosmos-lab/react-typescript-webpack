@@ -23,8 +23,9 @@
       "eslint ./src/",
       "jest --env=jsdom ./tests/unit --bail --watchAll=false --findRelatedTests --passWithNoTests ./tests/unit"
     ],
-    "*.{js,jsx,ts,tsx,json,css,js}": [
-      "prettier --write"
+    "*.{ts,tsx,scss}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "dependencies": {
