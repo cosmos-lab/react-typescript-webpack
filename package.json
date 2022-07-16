@@ -12,7 +12,6 @@
     "pretty": "prettier --write ./src/",
     "clean": "rimraf ./build",
     "test": "jest --env=jsdom ./tests/unit",
-    "lint-staged": "lint-staged",
     "prepare": "husky install && npx husky add .husky/pre-commit 'npm run lint-staged'"
   },
   "author": "",
