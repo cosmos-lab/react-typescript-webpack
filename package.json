@@ -10,17 +10,17 @@
     "build": "npm run clean && webpack --mode production",
     "lint": "eslint ./src/",
     "pretty": "prettier --write ./src/",
-    "clean": "rimraf ./build",
     "test": "jest --env=jsdom ./tests/unit",
     "test:e2e": "jest --testPathPattern=./tests/e2e/*",
     "lint-staged": "lint-staged",
-    "prepare": "husky install && npx husky add .husky/pre-commit 'npm run lint-staged'"
+    "prepare": "husky install && npx husky add .husky/pre-commit 'npm run lint-staged'",
+    "clean": "rimraf ./build"
   },
   "author": "",
   "license": "ISC",
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint ./src/",
+      "npm run lint",
       "jest --env=jsdom ./tests/unit --bail --watchAll=false --findRelatedTests --passWithNoTests ./tests/unit"
     ],
     "*.{ts,tsx,scss}": [
@@ -44,8 +44,6 @@
     "@types/jest": "^28.1.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
-    "@types/webpack": "^5.28.0",
-    "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "babel-jest": "^28.1.3",
     "babel-loader": "^8.2.5",
