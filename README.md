@@ -1,5 +1,5 @@
 # Objective
-Provide MVP ready boilerplate UI code will following amenities:
+Provide MVP ready boilerplate UI code with following amenities:
 
 1. ReactJS with TypeScript
 2. Webpack teamup with Babel
