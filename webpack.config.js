@@ -25,6 +25,7 @@ const config = (env, argv) => {
       extensions: [".tsx", ".ts", ".js"],
       alias: {
         ["@"]: path.resolve(__dirname, "src/"),
+        ["@services"]: path.resolve(__dirname, "src/services/"),
         ["@views"]: path.resolve(__dirname, "src/views/"),
       },
     },

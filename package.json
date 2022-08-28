@@ -7,11 +7,11 @@
     "dev": "npm run clean && webpack --mode development  --watch",
     "prod": "npm run clean && webpack --mode production  --watch",
     "build": "npm run clean && webpack --mode production",
-    "lint": "eslint ./src/",
+    "lint": "eslint ./src/**/* ./unit/**/*",
+    "lint:fix": "eslint --fix ./src/**/* ./unit/**/*",
+    "test": "jest --env=jsdom ./unit",
+    "pretty": "prettier --write ./src/**/* ./unit/**/*",
     "lint-staged": "lint-staged",
-    "test": "jest --env=jsdom ./tests/unit",
-    "test:e2e": "jest --testPathPattern=./tests/e2e/*",
-    "pretty": "prettier --write ./src/",
     "prepare": "husky install && npx husky add .husky/pre-commit 'npm run lint-staged'",
     "clean": "rimraf ./build"
   },
@@ -20,16 +20,18 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "npm run lint",
-      "jest --env=jsdom ./tests/unit --bail --watchAll=false --findRelatedTests --passWithNoTests ./tests/unit"
+      "jest --env=jsdom --bail --watchAll=false --findRelatedTests --passWithNoTests ./unit"
     ],
     "*.{ts,tsx,scss}": [
-      "prettier --write",
-      "git add"
+      "npm run pretty"
     ]
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "miragejs": "^0.1.45",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
@@ -40,7 +42,7 @@
     "@babel/runtime": "^7.18.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@types/jest": "^28.1.6",
+    "@types/jest": "^28.1.8",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
@@ -59,8 +61,8 @@
     "react-test-renderer": "^18.2.0",
     "rimraf": "^3.0.2",
     "terser-webpack-plugin": "^5.3.3",
-    "tsc-files": "^1.1.3",
-    "typescript": "^4.7.4",
+    "ts-jest": "^28.0.8",
+    "typescript": "4.7.4",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"

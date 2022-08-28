@@ -12,10 +12,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@*": ["./*"]
+      "@services/*": ["src/services/*"],
+      "@views/*": ["src/views/*"],
+      "@state/*": ["src/state/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "unit"]
 }

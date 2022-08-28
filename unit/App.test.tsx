@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
 import { act, render, screen, waitFor } from "@testing-library/react";
-import React from "react";
-import App from "../../src/views/App";
+import App from "@views/App";
 
 it("base test", async () => {
   act(() => {

@@ -26,5 +26,6 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
-  }
+  },
+  "ignorePatterns": ["**/*.js", "**/*.json", "**/node_modules/**"]
 }
