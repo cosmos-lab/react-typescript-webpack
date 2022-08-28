@@ -14,9 +14,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@state/*": ["src/state/*"],
       "@services/*": ["src/services/*"],
+      "@components/*": ["src/components/*"],
       "@views/*": ["src/views/*"],
-      "@state/*": ["src/state/*"]
+      "@styles/*": ["src/styles/*"]
     }
   },
   "include": ["src", "unit"]

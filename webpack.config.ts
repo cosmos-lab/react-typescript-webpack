@@ -1,5 +1,4 @@
 import { Configuration } from "webpack";
-import "babel-loader";
 import "webpack-dev-server";
 
 import path from "path";
@@ -31,8 +30,11 @@ const config = (env: any, argv: any): Configuration => {
       extensions: [".tsx", ".ts", ".js"],
       alias: {
         ["@"]: path.resolve(__dirname, "src/"),
+        ["@state"]: path.resolve(__dirname, "src/state/"),
         ["@services"]: path.resolve(__dirname, "src/services/"),
+        ["@components"]: path.resolve(__dirname, "src/components/"),
         ["@views"]: path.resolve(__dirname, "src/views/"),
+        ["@styles"]: path.resolve(__dirname, "src/styles/"),
       },
     },
     devServer: {

@@ -4,20 +4,19 @@
   "description": "React boilerplate",
   "scripts": {
     "start": "webpack serve --mode development --host 0.0.0.0",
-    "dev": "npm run clean && webpack --mode development  --watch",
-    "prod": "npm run clean && webpack --mode production  --watch",
-    "build": "npm run clean && webpack --mode production",
+    "dev": "rimraf ./build && webpack --mode development --watch",
+    "prod": "rimraf ./build && webpack --mode production --watch",
+    "build": "rimraf ./build && webpack --mode production",
     "lint": "eslint ./",
     "lint:fix": "eslint --fix ./",
-    "test": "jest --bail --env=jsdom --coverage ./unit",
-    "test:watch": "jest --env=jsdom --bail --watch ./unit",
-    "test:coverage": "rimraf ./coverage && jest --env=jsdom --coverage ./unit",
+    "test": "jest --bail ./unit",
+    "test:watch": "jest --bail --watch ./unit",
+    "test:coverage": "rimraf ./coverage && jest --coverage ./unit",
     "profile": "webpack --profile --json > stats.json",
     "pretty": "prettier --write ./",
     "depcheck": "depcheck",
     "lint-staged": "lint-staged",
-    "prepare": "rimraf ./.husky && husky install && npx husky add .husky/pre-commit 'npm run lint-staged'",
-    "clean": "rimraf ./build"
+    "prepare": "rimraf ./.husky && husky install && npx husky add .husky/pre-commit 'npm run lint-staged'"
   },
   "keywords": [
     "react",

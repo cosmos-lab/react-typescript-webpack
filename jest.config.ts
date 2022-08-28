@@ -3,7 +3,7 @@ import "ts-jest";
 
 const config: Config = {
   preset: "ts-jest",
-  testEnvironment: "node",
+  testEnvironment: "jsdom",
   moduleNameMapper: {
     "@views/(.*)": "<rootDir>/src/views/$1",
   },
