@@ -1,4 +1,5 @@
 import { Configuration } from "webpack";
+import "webpack-dev-server";
 
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -9,7 +10,7 @@ import ESLintPlugin from "eslint-webpack-plugin";
 const config = (env: any, argv: any): Configuration => {
   const isProd = argv.mode === "production";
 
-  const configuration: any = {
+  const configuration: Configuration = {
     entry: "./src/index.tsx",
     devtool: argv.mode === "production" ? false : "source-map",
     output: {
