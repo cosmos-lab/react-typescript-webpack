@@ -32,7 +32,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "npm run lint",
-      "jest --env=jsdom --bail --watchAll=false --findRelatedTests --passWithNoTests ./unit"
+      "jest --bail --watchAll=false --findRelatedTests --passWithNoTests ./unit"
     ],
     "*.{ts,tsx,scss}": [
       "npm run pretty"
