@@ -6,10 +6,10 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 
-const config = (env, argv: any): Configuration => {
+const config = (env: any, argv: any): Configuration => {
   const isProd = argv.mode === "production";
 
-  const configuration: Configuration = {
+  const configuration: any = {
     entry: "./src/index.tsx",
     devtool: argv.mode === "production" ? false : "source-map",
     output: {
