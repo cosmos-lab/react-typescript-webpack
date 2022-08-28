@@ -13,15 +13,15 @@ const config = (env: any, argv: any): Configuration => {
 
   const configuration: Configuration = {
     entry: "./src/index.tsx",
-    devtool: argv.mode === "production" ? false : "source-map",
+    devtool: isProd ? false : "source-map",
     output: {
       path: path.resolve(__dirname, "./build"),
-      filename: argv.mode === "production" ? "[chunkhash].js" : "[name].[chunkhash].js",
+      filename: isProd ? "[chunkhash].js" : "[name].[chunkhash].js",
     },
     module: {
       rules: [
         {
-          test: /\.(ts|js)x?$/,
+          test: /\.(ts)x?$/,
           exclude: /node_modules/,
           loader: "babel-loader",
         },
