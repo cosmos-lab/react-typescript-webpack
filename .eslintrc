@@ -27,19 +27,5 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
   },
-  "ignorePatterns": [
-    "**/*.js",
-    "**/*.json",
-    "**/*.md",
-    "**/node_modules/**",
-    "jest.config.js",
-    "webpack.config.js",
-    "package.json",
-    "tsconfig.json",
-    "package-lock.json",
-    ".babelrc",
-    ".eslintrc",
-    ".prettierrc",
-    ".gitignore"
-  ]
+  "ignorePatterns": ["**/*.md", "**/node_modules/**"]
 }
