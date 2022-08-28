@@ -1,4 +1,5 @@
 import { Configuration } from "webpack";
+import "babel-loader";
 import "webpack-dev-server";
 
 import path from "path";
