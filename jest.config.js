@@ -3,7 +3,6 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
-  verbose: true,
   moduleNameMapper: {
     "@views/(.*)": "<rootDir>/src/views/$1",
   },
