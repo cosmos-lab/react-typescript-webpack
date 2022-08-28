@@ -27,5 +27,14 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
   },
-  "ignorePatterns": ["**/*.js", "**/*.json", "**/node_modules/**"]
+  "ignorePatterns": [
+    "**/*.js",
+    "**/*.json",
+    "**/*.md",
+    "**/node_modules/**",
+    ".babelrc",
+    ".eslintrc",
+    ".prettierrc",
+    ".gitignore"
+  ]
 }
