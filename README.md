@@ -1,4 +1,5 @@
 # Objective
+
 Provide MVP ready boilerplate UI code with following amenities:
 
 1. ReactJS with TypeScript

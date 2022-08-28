@@ -7,10 +7,10 @@
     "dev": "npm run clean && webpack --mode development  --watch",
     "prod": "npm run clean && webpack --mode production  --watch",
     "build": "npm run clean && webpack --mode production",
-    "lint": "eslint ./src/**/* ./unit/**/*",
+    "lint": "eslint ./",
     "lint:fix": "eslint --fix ./src/**/* ./unit/**/*",
     "test": "jest --env=jsdom ./unit",
-    "pretty": "prettier --write ./src/**/* ./unit/**/*",
+    "pretty": "prettier --write ./",
     "lint-staged": "lint-staged",
     "prepare": "husky install && npx husky add .husky/pre-commit 'npm run lint-staged'",
     "clean": "rimraf ./build"

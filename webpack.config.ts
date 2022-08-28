@@ -1,11 +1,15 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
+import { Configuration } from "webpack";
 
-const config = (env, argv) => {
-  return {
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
+import ESLintPlugin from "eslint-webpack-plugin";
+
+const config = (env, argv: any): Configuration => {
+  const isProd = argv.mode === "production";
+
+  const configuration: Configuration = {
     entry: "./src/index.tsx",
     devtool: argv.mode === "production" ? false : "source-map",
     output: {
@@ -59,18 +63,20 @@ const config = (env, argv) => {
         extensions: ["ts", "tsx"],
       }),
     ],
-    optimization:
-      argv.mode === "production"
-        ? {
-            minimize: true,
-            minimizer: [
-              new TerserPlugin({
-                extractComments: false,
-              }),
-            ],
-          }
-        : { minimize: false },
   };
+
+  if (isProd) {
+    configuration.optimization = {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false,
+        }),
+      ],
+    };
+  }
+
+  return configuration;
 };
 
-module.exports = config;
+export default config;

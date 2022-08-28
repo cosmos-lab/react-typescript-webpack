@@ -1,9 +1,11 @@
-/** @type {import("ts-jest/dist/types").InitialOptionsTsJest} */
+import type { Config } from "jest";
 
-module.exports = {
+const config: Config = {
   preset: "ts-jest",
   testEnvironment: "node",
   moduleNameMapper: {
     "@views/(.*)": "<rootDir>/src/views/$1",
   },
 };
+
+export default config;
