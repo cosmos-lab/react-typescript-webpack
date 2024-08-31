@@ -31,6 +31,7 @@ export default [
       },
     },
     rules: {
+      "@typescript-eslint/no-explicit-any": "off",
       "prefer-const": "error",
       "react/jsx-uses-react": "off",
       "react/jsx-uses-vars": "error",

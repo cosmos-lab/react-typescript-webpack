@@ -1,9 +1,15 @@
-import { act, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import App from "@/App";
 
-describe("base test", async () => {
-  act(() => {
+const getInput = (placeholder: string) =>
+  screen.getByPlaceholderText(placeholder);
+
+describe("App Component", () => {
+  it("renders with default values", () => {
     render(<App />);
+
+    expect(getInput("Label")).toHaveValue("My Counter");
+    expect(getInput("Base count")).toHaveValue("1");
   });
-  const element = await waitFor(() => screen.getByText(/React and TypeScript/i));
 });

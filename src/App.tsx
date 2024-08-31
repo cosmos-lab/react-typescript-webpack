@@ -1,9 +1,29 @@
-export default function App() {
-  const message = "React and TypeScript";
+import { useState } from "react";
+import Counter from "@/components/Counter";
+
+function App() {
+  const [label, setLabel] = useState("My Counter");
+  const [baseCount, setBaseCount] = useState(1);
 
   return (
-    <div className="test" id="test">
-      {message}
-    </div>
+    <>
+      <input
+        onInput={(e: any) => setLabel(e.target.value)}
+        placeholder="Label"
+        type="text"
+        value={label}
+      />
+      <input
+        onInput={(e: any) => setBaseCount(e.target.value)}
+        placeholder="Base count"
+        type="text"
+        value={baseCount}
+      />
+      <br />
+      <hr />
+      <Counter baseCount={baseCount} label={label} />
+    </>
   );
 }
+
+export default App;

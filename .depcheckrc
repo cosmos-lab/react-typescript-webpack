@@ -1,0 +1,1 @@
+ignores: ["@types/jest", "babel-jest", "babel-loader", "jest-environment-jsdom", "rimraf", "typescript", "webpack-cli"]
