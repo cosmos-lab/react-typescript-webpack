@@ -1,10 +1,10 @@
-function UnOptimizedCounter({ count, baseCount, increment }: any) {
-  console.log(`UnOptimizedCounter render`);
+import RenderCount from "./RenderCount";
 
+function UnOptimizedCounter({ count, baseCount, increment }: any) {
   return (
     <div>
       <b>
-        UnOptimizedCounter Count:{count}, Base Count: {baseCount}{" "}
+        UnOptimizedCounter Count:{count}, Base Count: {baseCount}, <RenderCount />
       </b>{" "}
       <a href="#" onClick={() => increment()}>
         Increase

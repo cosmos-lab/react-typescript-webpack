@@ -1,12 +1,11 @@
 import { memo } from "react";
+import RenderCount from "./RenderCount";
 
 function OptimizedCounter({ count, baseCount, increment }: any) {
-  console.log(`OptimizedCounter render`);
-
   return (
     <div>
       <b>
-        OptimizedCounter Count:{count}, Base Count: {baseCount}{" "}
+        OptimizedCounter Count:{count}, Base Count: {baseCount}, <RenderCount />
       </b>
       <a href="#" onClick={() => increment()}>
         Increase
