@@ -1,6 +1,7 @@
 import pluginJs from "@eslint/js";
 import pluginImport from "eslint-plugin-import-v9";
 import pluginReact from "eslint-plugin-react";
+import pluginReactHools from "eslint-plugin-react-hooks";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -13,6 +14,7 @@ export default [
     plugins: {
       react: pluginReact,
       import: pluginImport,
+      "react-hooks": pluginReactHools,
     },
     languageOptions: {
       parserOptions: {
@@ -51,6 +53,7 @@ export default [
         },
       ],
       "react/react-in-jsx-scope": "off",
+      "react-hooks/exhaustive-deps": "warn",
       "import/order": [
         "error",
         {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Counter from "@/components/Counter";
+import RenderCount from "@/components/RenderCount";
 
 function App() {
   const [label, setLabel] = useState("Change me to re-render");
@@ -21,7 +22,9 @@ function App() {
       />
       <br />
       <br />
-      <Counter baseCount={baseCount} label={label} />
+      <Counter baseCount={baseCount} label={label}>
+        <RenderCount />
+      </Counter>
     </>
   );
 }

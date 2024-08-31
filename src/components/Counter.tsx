@@ -3,15 +3,15 @@ import OptimizedCounter from "./OptimizedCounter";
 import RenderCount from "./RenderCount";
 import UnOptimizedCounter from "./UnOptimizedCounter";
 
-function Counter({ label, baseCount }: any) {
+function Counter({ label, baseCount, children = null }: any) {
   const [count, setCount] = useState(baseCount);
 
   const increment = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+    setCount((c) => c + 1);
+  }, []);
 
   const incrementU = () => {
-    setCount(count + 1);
+    setCount((c) => c + 1);
   };
 
   return (
@@ -25,10 +25,12 @@ function Counter({ label, baseCount }: any) {
       </div>
       <br />
       <br />
-      <OptimizedCounter baseCount={baseCount} count={count} increment={increment} />
+      <OptimizedCounter baseCount={baseCount} count={0} increment={increment} />
       <br />
       <br />
       <UnOptimizedCounter baseCount={baseCount} count={count} increment={incrementU} />
+
+      {children && <div>Child nodes of counter {children}</div>}
     </div>
   );
 }
