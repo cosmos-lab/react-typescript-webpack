@@ -1,1 +1,0 @@
-ignores: ["jest-environment-jsdom", "depcheck", "webpack-cli", "babel-loader", "@views/*", "@services/*"]

@@ -1,16 +1,19 @@
-import { Configuration } from "webpack";
 import "webpack-dev-server";
-
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path, { dirname } from "path";
+import TerserPlugin from "terser-webpack-plugin";
+import { fileURLToPath } from "url";
 
-const config = (env: any, argv: any): Configuration => {
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const config = (env, argv) => {
   const isProd = argv.mode === "production";
 
-  const configuration: Configuration = {
+  const configuration = {
     entry: "./src/index.tsx",
     devtool: isProd ? false : "source-map",
     output: {
@@ -65,6 +68,7 @@ const config = (env: any, argv: any): Configuration => {
       new ESLintPlugin({
         exclude: ["./node_modules/*"],
         extensions: ["ts", "tsx"],
+        configType: "flat",
       }),
     ],
   };
