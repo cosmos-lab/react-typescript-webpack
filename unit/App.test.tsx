@@ -8,7 +8,7 @@ describe("App Component", () => {
   it("renders with default values", () => {
     render(<App />);
 
-    expect(getInput("Label")).toHaveValue("My Counter");
+    expect(getInput("Label")).toHaveValue("Change me to re-render");
     expect(getInput("Base count")).toHaveValue("1");
   });
 });
