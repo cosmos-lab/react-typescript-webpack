@@ -20,11 +20,11 @@
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "if [ \"$NODE_ENV\" != \"production\" ]; then npx lint-staged; fi",
-    "pre-push": "if [ \"$NODE_ENV\" != \"production\" ]; then npm test; fi"
+    "pre-commit": "if [ \"$NODE_ENV\" != \"production\" ]; then npx lint-staged; fi"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
+      "npm run test",
       "npm run lint:fix",
       "npm run prettier:fix",
       "git add ."
