@@ -7,7 +7,7 @@ const RenderCount = () => {
     renderCountRef.current += 1;
   });
 
-  return <div>Rendered {renderCountRef.current} times.</div>;
+  return <div>Rendered Count: {renderCountRef.current}</div>;
 };
 
 export default RenderCount;
