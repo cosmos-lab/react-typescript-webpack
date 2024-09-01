@@ -84,6 +84,9 @@
     "jest",
     "eslint",
     "prettier",
-    "react"
+    "react",
+    "redux",
+    "redux-saga",
+    "tailwindcss"
   ]
 }

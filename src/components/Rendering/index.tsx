@@ -4,7 +4,7 @@ import RenderCount from "./RenderCount";
 
 function Rendering() {
   const [label, setLabel] = useState("");
-  const [baseCount, setBaseCount] = useState(undefined);
+  const [baseCount, setBaseCount] = useState(parseInt(""));
   const inputCss = `border border-gray-300 p-2 rounded-md shadow-sm focus:outline-none 
                     focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-1/2`;
   return (
