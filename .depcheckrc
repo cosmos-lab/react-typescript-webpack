@@ -1,1 +1,15 @@
-ignores: ["@types/jest", "babel-jest", "babel-loader", "jest-environment-jsdom", "rimraf", "typescript", "webpack-cli"]
+ignores: [
+  "@types/jest",
+  "babel-jest",
+  "babel-loader",
+  "jest-environment-jsdom",
+  "rimraf",
+  "typescript",
+  "webpack-cli",
+  "css-loader",
+  "identity-obj-proxy",
+  "postcss-loader",
+  "sass",
+  "sass-loader",
+  "style-loader",
+]
