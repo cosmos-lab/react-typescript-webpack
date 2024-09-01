@@ -4,7 +4,7 @@ function UnOptimized({ count, baseCount, increment }: any) {
   return (
     <div>
       <b>UnOptimized</b>{" "}
-      <a href="#" onClick={() => increment()}>
+      <a className="text-blue-600" href="#" onClick={() => increment()}>
         Increase Count
       </a>
       <br />

@@ -1,11 +1,12 @@
-import { useCallback, useId, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Optimized from "./Optimized";
 import RenderCount from "./RenderCount";
 import UnOptimized from "./UnOptimized";
 
 function Counter({ label, baseCount, children = null }: any) {
   const [count, setCount] = useState(baseCount);
-  const id = useId();
+
+  useEffect(() => setCount(baseCount), [baseCount]);
 
   const increment = useCallback(() => {
     setCount((c) => c + 1);
@@ -16,10 +17,14 @@ function Counter({ label, baseCount, children = null }: any) {
   };
 
   return (
-    <div style={{ fontFamily: "monospace", fontSize: "12px", lineHeight: "150%" }}>
-      {id}
-      <br />
-      <br />
+    <div
+      className="border-solid border border-indigo-600 p-4 rounded mx-5"
+      style={{
+        fontFamily: "monospace",
+        fontSize: "12px",
+        lineHeight: "150%",
+      }}
+    >
       <div>
         <b>Counter Container</b>
         <br />

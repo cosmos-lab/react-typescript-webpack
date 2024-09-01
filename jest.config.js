@@ -6,6 +6,7 @@ const config = {
   testMatch: ["**/?(*.)+(test).[t]s?(x)"],
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1",
+    "\\.css$": "identity-obj-proxy",
   },
 };
 

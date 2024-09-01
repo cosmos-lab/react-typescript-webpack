@@ -18,8 +18,7 @@
       "@state/*": ["src/state/*"],
       "@services/*": ["src/services/*"],
       "@components/*": ["src/components/*"],
-      "@views/*": ["src/views/*"],
-      "@styles/*": ["src/styles/*"]
+      "@views/*": ["src/views/*"]
     }
   },
   "include": ["src", "unit"]

@@ -5,7 +5,7 @@ function Optimized({ baseCount, increment }: any) {
   return (
     <div>
       <b>Optimized</b>{" "}
-      <a href="#" onClick={() => increment()}>
+      <a className="text-blue-600" href="#" onClick={() => increment()}>
         Increase Count
       </a>
       <br />
